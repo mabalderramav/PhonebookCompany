@@ -1,0 +1,3 @@
+DROP DATABASE dbPhonebookCompany
+go
+CREATE DATABASE dbPhonebookCompany
