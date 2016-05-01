@@ -14,6 +14,7 @@ CREATE TABLE Agenda (
 	LineaDirecta nvarchar(20) NOT NULL,
 	Interno nvarchar(20) NOT NULL,
 	Corporativo nvarchar(20) NOT NULL,
+	AccesoDirecto nvarchar(10) NOT NULL,
 	IdCargo smallint NOT NULL,
 	IdUbicacion smallint NOT NULL
 )
