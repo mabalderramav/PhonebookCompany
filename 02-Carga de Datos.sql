@@ -74,3 +74,9 @@ INSERT INTO Agenda([Codigo],[Nombre],[Email],[Habilitado],[ImagenRuta],[LineaDir
 set @IdCargo = (select Cargo.IdCargo from Cargo where Cargo.Codigo = '5050')
 INSERT INTO Agenda([Codigo],[Nombre],[Email],[Habilitado],[ImagenRuta],[LineaDirecta],[Interno],[Corporativo],[IdCargo],[IdUbicacion])
 	VALUES('10008','Wylie Skinner','wskinner@nanus.com.bo',1,'img/','3-3439364','5060','No tiene',@IdCargo,@IdUbicacion)
+go
+-----------Tabla Rol----------------------------------
+INSERT INTO Rol([Descripcion]) VALUES('Administrador')
+INSERT INTO Rol([Descripcion]) VALUES('Usuario')
+-----------Tabla Usuario------------------------------
+INSERT INTO Usuario([Nombre],[Clave],[Disponible],[IdRol]) VALUES('admin','admin',1,1)

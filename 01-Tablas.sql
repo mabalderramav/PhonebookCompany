@@ -55,6 +55,7 @@ CREATE TABLE Ubicacion (
 CREATE TABLE Usuario ( 
 	IdUsuario int identity(1,1)  NOT NULL,
 	Nombre nvarchar(50) NOT NULL,
+	Clave nvarchar(20) NOT NULL,
 	Disponible bit NOT NULL,
 	IdRol smallint NOT NULL
 )
