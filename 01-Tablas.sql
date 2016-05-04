@@ -4,6 +4,26 @@ USE dbPhonebookCompany
 
 
 
+CREATE TABLE Acceso ( 
+	IdAcceso int identity(1,1)  NOT NULL,
+	Codigo nvarchar(10) NOT NULL,
+	Nombre nvarchar(100) NOT NULL,
+	Descripcion nvarchar(250) NOT NULL,
+	Icono nvarchar(100) NOT NULL,
+	Posicion smallint NOT NULL,
+	URL nvarchar(250) NOT NULL,
+	Habilitado bit NOT NULL,
+	Clic bit NOT NULL,
+	AccesoRoot nvarchar(10) NOT NULL
+)
+;
+
+CREATE TABLE AccesoRol ( 
+	IdAcceso int NOT NULL,
+	IdRol smallint NOT NULL
+)
+;
+
 CREATE TABLE Agenda ( 
 	IdAgenda int identity(1,1)  NOT NULL,
 	Codigo nvarchar(5) NOT NULL,
@@ -63,6 +83,18 @@ CREATE TABLE Usuario (
 ;
 
 
+ALTER TABLE Acceso
+	ADD CONSTRAINT UQ_Acceso_Codigo UNIQUE (Codigo)
+;
+
+CREATE INDEX IXFK_AccesoRol_Rol
+	ON AccesoRol (IdRol ASC)
+;
+
+CREATE INDEX IXFK_AccesoRol_Acceso
+	ON AccesoRol (IdAcceso ASC)
+;
+
 ALTER TABLE Agenda
 	ADD CONSTRAINT UQ_Agenda_Codigo UNIQUE (Codigo)
 ;
@@ -103,6 +135,14 @@ ALTER TABLE Usuario
 	ADD CONSTRAINT UQ_Usuario_Nombre UNIQUE (Nombre)
 ;
 
+ALTER TABLE Acceso ADD CONSTRAINT PK_Acceso 
+	PRIMARY KEY CLUSTERED (IdAcceso)
+;
+
+ALTER TABLE AccesoRol ADD CONSTRAINT PK_AccesoRol 
+	PRIMARY KEY CLUSTERED (IdAcceso, IdRol)
+;
+
 ALTER TABLE Agenda ADD CONSTRAINT PK_Agenda 
 	PRIMARY KEY CLUSTERED (IdAgenda)
 ;
@@ -132,6 +172,14 @@ ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario
 ;
 
 
+
+ALTER TABLE AccesoRol ADD CONSTRAINT FK_AccesoRol_Rol 
+	FOREIGN KEY (IdRol) REFERENCES Rol (IdRol)
+;
+
+ALTER TABLE AccesoRol ADD CONSTRAINT FK_AccesoRol_Acceso 
+	FOREIGN KEY (IdAcceso) REFERENCES Acceso (IdAcceso)
+;
 
 ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_Cargo 
 	FOREIGN KEY (IdCargo) REFERENCES Cargo (IdCargo)
