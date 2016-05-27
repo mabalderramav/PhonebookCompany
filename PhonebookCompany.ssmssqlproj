@@ -37,6 +37,12 @@
           <AssociatedConnUserName />
           <FullPath>02-Carga de Datos.sql</FullPath>
         </FileNode>
+        <FileNode Name="03-Procedimiento Almacenados.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ALDO-HP:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ALDO-HP</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>03-Procedimiento Almacenados.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Varios" Type="3" Sorted="true">

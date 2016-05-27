@@ -55,28 +55,38 @@ Declare @IdCargo smallint,
 set @IdCargo = (select Cargo.IdCargo from Cargo where Cargo.Codigo = '5010')
 set @IdUbicacion = (select Ubicacion.IdUbicacion from Ubicacion where Ubicacion.Descripcion = 'P3')
 INSERT INTO Agenda([Codigo],[Nombre],[Email],[Habilitado],[ImagenRuta],[LineaDirecta],[Interno],[Corporativo],[IdCargo],[IdUbicacion],[AccesoDirecto])
-	VALUES('10001','Miguel Aldo Balderrama Vaca','mbalderrama@nanus.com.bo',1,'img/','3-3439391','5010','No tiene',@IdCargo,@IdUbicacion,'*911')
+	VALUES('10001','Miguel Aldo Balderrama Vaca','mbalderrama@nanus.com.bo',1,'img/user.png','3-3439391','5010','No tiene',@IdCargo,@IdUbicacion,'*911')
 set @IdCargo = (select Cargo.IdCargo from Cargo where Cargo.Codigo = '5020')
 INSERT INTO Agenda([Codigo],[Nombre],[Email],[Habilitado],[ImagenRuta],[LineaDirecta],[Interno],[Corporativo],[IdCargo],[IdUbicacion],[AccesoDirecto])
-	VALUES('10002','Imogene Lucas','ilucas@nanus.com.bo',1,'img/','3-3439392','5020','No tiene',@IdCargo,@IdUbicacion,'*511')
+	VALUES('10002','Imogene Lucas','ilucas@nanus.com.bo',1,'img/user.png','3-3439392','5020','No tiene',@IdCargo,@IdUbicacion,'*511')
 INSERT INTO Agenda([Codigo],[Nombre],[Email],[Habilitado],[ImagenRuta],[LineaDirecta],[Interno],[Corporativo],[IdCargo],[IdUbicacion],[AccesoDirecto])
-	VALUES('10003','Yoshi Robinson','yrobinson@nanus.com.bo',1,'img/','3-3439392','5020','No tiene',@IdCargo,@IdUbicacion,'*512')
+	VALUES('10003','Yoshi Robinson','yrobinson@nanus.com.bo',1,'img/user.png','3-3439392','5020','No tiene',@IdCargo,@IdUbicacion,'*512')
 INSERT INTO Agenda([Codigo],[Nombre],[Email],[Habilitado],[ImagenRuta],[LineaDirecta],[Interno],[Corporativo],[IdCargo],[IdUbicacion],[AccesoDirecto])
-	VALUES('10004','Demetrius Mann','dmann@nanus.com.bo',1,'img/','3-3439392','5020','No tiene',@IdCargo,@IdUbicacion,'*513')
+	VALUES('10004','Demetrius Mann','dmann@nanus.com.bo',1,'img/user.png','3-3439392','5020','No tiene',@IdCargo,@IdUbicacion,'*513')
 set @IdCargo = (select Cargo.IdCargo from Cargo where Cargo.Codigo = '5030')
 INSERT INTO Agenda([Codigo],[Nombre],[Email],[Habilitado],[ImagenRuta],[LineaDirecta],[Interno],[Corporativo],[IdCargo],[IdUbicacion],[AccesoDirecto])
-	VALUES('10005','Myra Koch','mkoch@nanus.com.bo',1,'img/','3-3439360','5030','(+591)-6085982',@IdCargo,@IdUbicacion,'*610')
+	VALUES('10005','Myra Koch','mkoch@nanus.com.bo',1,'img/user.png','3-3439360','5030','(+591)-6085982',@IdCargo,@IdUbicacion,'*610')
 set @IdCargo = (select Cargo.IdCargo from Cargo where Cargo.Codigo = '5040')
 INSERT INTO Agenda([Codigo],[Nombre],[Email],[Habilitado],[ImagenRuta],[LineaDirecta],[Interno],[Corporativo],[IdCargo],[IdUbicacion],[AccesoDirecto])
-	VALUES('10006','Basil Hudson','bhudson@nanus.com.bo',1,'img/','3-3439363','5040','(+591)-6086082',@IdCargo,@IdUbicacion,'*755')
+	VALUES('10006','Basil Hudson','bhudson@nanus.com.bo',1,'img/user.png','3-3439363','5040','(+591)-6086082',@IdCargo,@IdUbicacion,'*755')
 INSERT INTO Agenda([Codigo],[Nombre],[Email],[Habilitado],[ImagenRuta],[LineaDirecta],[Interno],[Corporativo],[IdCargo],[IdUbicacion],[AccesoDirecto])
-	VALUES('10007','Frances Peck','fpeck@nanus.com.bo',1,'img/','3-3439364','5050','(+591)-6086083',@IdCargo,@IdUbicacion,'*756')
+	VALUES('10007','Frances Peck','fpeck@nanus.com.bo',1,'img/user.png','3-3439364','5050','(+591)-6086083',@IdCargo,@IdUbicacion,'*756')
 set @IdCargo = (select Cargo.IdCargo from Cargo where Cargo.Codigo = '5050')
 INSERT INTO Agenda([Codigo],[Nombre],[Email],[Habilitado],[ImagenRuta],[LineaDirecta],[Interno],[Corporativo],[IdCargo],[IdUbicacion],[AccesoDirecto])
-	VALUES('10008','Wylie Skinner','wskinner@nanus.com.bo',1,'img/','3-3439364','5060','No tiene',@IdCargo,@IdUbicacion,'*800')
+	VALUES('10008','Wylie Skinner','wskinner@nanus.com.bo',1,'img/user.png','3-3439364','5060','No tiene',@IdCargo,@IdUbicacion,'*800')
 go
 -----------Tabla Rol----------------------------------
 INSERT INTO Rol([Descripcion]) VALUES('Administrador')
 INSERT INTO Rol([Descripcion]) VALUES('Usuario')
 -----------Tabla Usuario------------------------------
 INSERT INTO Usuario([Nombre],[Clave],[Disponible],[IdRol]) VALUES('admin','admin',1,1)
+-----------Tabla Acceso-------------------------------
+go
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000001','Transacciones','Transacciones','',1,'#',1,0,'1000000001');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000002','Agenda Telofónica','Agenda Telofónica','',1,'~/default.aspx',1,1,'1000000001');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000003','Gestión de agenda','Gestión de agenda','',2,'~/frmGestionAgenda.aspx',1,1,'1000000001');
+go
+-----------Tabla AccesoRol----------------------------
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,1)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,2)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,3)
