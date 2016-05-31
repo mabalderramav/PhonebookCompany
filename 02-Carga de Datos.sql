@@ -85,8 +85,14 @@ go
 insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000001','Transacciones','Transacciones','',1,'#',1,0,'1000000001');
 insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000002','Agenda Telofónica','Agenda Telofónica','',1,'~/default.aspx',1,1,'1000000001');
 insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000003','Gestión de agenda','Gestión de agenda','',2,'~/frmGestionAgenda.aspx',1,1,'1000000001');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000004','Gestión de Area','Gestión de Area','',3,'~/frmGestionArea.aspx',1,1,'1000000001');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000005','Gestión de Cargo','Gestión de Cargo','',4,'~/frmGestionCargo.aspx',1,1,'1000000001');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000006','Gestión de Ubicación','Gestión de Ubicación','',5,'~/frmGestionUbicacion.aspx',1,1,'1000000001');
 go
 -----------Tabla AccesoRol----------------------------
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,1)
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,2)
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,3)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,4)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,5)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,6)
