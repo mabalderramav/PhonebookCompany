@@ -80,6 +80,7 @@ INSERT INTO Rol([Descripcion]) VALUES('Administrador')
 INSERT INTO Rol([Descripcion]) VALUES('Usuario')
 -----------Tabla Usuario------------------------------
 INSERT INTO Usuario([Nombre],[Clave],[Disponible],[IdRol]) VALUES('admin','admin',1,1)
+INSERT INTO Usuario([Nombre],[Clave],[Disponible],[IdRol]) VALUES('agenda','agenda',1,2)
 -----------Tabla Acceso-------------------------------
 go
 insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000001','Transacciones','Transacciones','',1,'#',1,0,'1000000001');
@@ -88,6 +89,10 @@ insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic
 insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000004','Gestión de Area','Gestión de Area','',3,'~/frmGestionArea.aspx',1,1,'1000000001');
 insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000005','Gestión de Cargo','Gestión de Cargo','',4,'~/frmGestionCargo.aspx',1,1,'1000000001');
 insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000006','Gestión de Ubicación','Gestión de Ubicación','',5,'~/frmGestionUbicacion.aspx',1,1,'1000000001');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000007','Administración','Administración','',2,'#',1,0,'1000000007');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000008','Gestión de Roles','Gestión de Roles','',1,'~/frmGestionRol.aspx',1,1,'1000000007');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000009','Gestión de Usuario','Gestión de Usuario','',2,'~/frmGestionUsuario.aspx',1,1,'1000000007');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000010','Gestión de Accesos','Gestión de Accesos','',3,'~/frmGestionAccesos.aspx',1,1,'1000000007');
 go
 -----------Tabla AccesoRol----------------------------
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,1)
@@ -96,3 +101,10 @@ insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,3)
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,4)
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,5)
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,6)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,7)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,8)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,9)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,10)
+
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (2,1)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (2,2)
