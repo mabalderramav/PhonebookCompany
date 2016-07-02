@@ -24,3 +24,16 @@ begin
 			where	ar.idRol = @idRol
 			)
 end
+go
+CREATE PROCEDURE sp_ListaDeAgendas
+AS
+BEGIN
+	SELECT        Agenda.IdAgenda, Agenda.Codigo, Agenda.Nombre, Agenda.Email, Agenda.LineaDirecta, Agenda.Interno, Agenda.Corporativo, Agenda.AccesoDirecto, Cargo.Descripcion AS Cargo, Area.Descripcion AS Area, 
+							 Ubicacion.Descripcion AS Ubicacion
+	FROM            Agenda INNER JOIN
+							 Cargo ON Agenda.IdCargo = Cargo.IdCargo INNER JOIN
+							 Area ON Cargo.IdArea = Area.IdArea INNER JOIN
+							 Ubicacion ON Agenda.IdUbicacion = Ubicacion.IdUbicacion
+	WHERE        (Agenda.Habilitado = 1)
+	ORDER BY Area,Cargo,Agenda.Nombre
+END

@@ -93,6 +93,8 @@ insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic
 insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000008','Gestión de Roles','Gestión de Roles','',1,'~/frmGestionRol.aspx',1,1,'1000000007');
 insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000009','Gestión de Usuario','Gestión de Usuario','',2,'~/frmGestionUsuario.aspx',1,1,'1000000007');
 insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000010','Gestión de Accesos','Gestión de Accesos','',3,'~/frmGestionAccesos.aspx',1,1,'1000000007');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000011','Reportes','Reportes','',3,'#',1,0,'1000000011');
+insert into Acceso (Codigo,Nombre,Descripcion,Icono,Posicion,URL,Habilitado,Clic,AccesoRoot) Values('1000000012','Lista de agendas','Lista de agendas','',1,'~/Reports/rptListaAgenda.aspx',1,1,'1000000011');
 go
 -----------Tabla AccesoRol----------------------------
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,1)
@@ -105,6 +107,9 @@ insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,7)
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,8)
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,9)
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,10)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,11)
+insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (1,11)
+
 
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (2,1)
 insert into AccesoRol ([IdRol],[IdAcceso]) VALUES (2,2)
